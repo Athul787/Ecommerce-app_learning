@@ -18,7 +18,7 @@ const state = { db: null };
 
 module.exports.connect = (connectionStatus) => {
   const url = "mongodb://localhost:27017";
-  const dbName = "maxshop";
+  const dbName = "shopping";
 
   try {
     const client = new mongoClient(url);
