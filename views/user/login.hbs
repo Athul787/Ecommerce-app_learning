@@ -2,7 +2,8 @@
   <div class="col-md-6 m-auto">
     <div class="container mt-5 pt-5">
 
-      <form>
+      <form action="/login" method="POST">  
+
         <div class="form-group">
           <label>Email address</label>
           <input
@@ -21,6 +22,9 @@
             placeholder="Password"
           />
         </div>
+              {{#if loginErr}}
+        <p class="error">Invalid username or password</p>
+      {{/if}}
         <a href="/signup">Create new account?</a>
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
