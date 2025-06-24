@@ -44,6 +44,10 @@ router.post("/edit-product/:id", (req, res) => {
   console.log(req.params.id);
   productHelper.updateProduct(req.params.id, req.body).then(() => {
     res.redirect("/admin");
+    if (req?.files?.Image) {
+      let image = req.files.Image;
+      image.mv("./public/product-images/" + req.params.id + ".jpg");
+    }
   });
 });
 module.exports = router;
